@@ -15,7 +15,7 @@
 #
 # Использование:
 #   1. Загрузите скрипт:
-#      wget https://github.com/akstis-su/arpi-stress
+#      git clone https://github.com/akstis-su/arpi-stress.git
 #   2. Дайте права на выполнение:
 #      chmod +x arpi-stress.sh
 #   3. Запустите:
