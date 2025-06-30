@@ -8,6 +8,9 @@
 - Охлаждение (60 секунд)
 Результаты сохраняются в CSV-файл для дальнейшего анализа
 
+## Скриншот
+![Скриншот стресс-теста](screenshot.png)
+
 ## Зависимости:
 - stress (установите: sudo apt install stress)
 - vcgencmd (доступен на Raspberry Pi с Raspberry Pi OS)
