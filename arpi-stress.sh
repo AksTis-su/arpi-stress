@@ -22,16 +22,11 @@
 #      ./arpi-stress.sh
 #
 # Автор: AksTis
+# https://akstis.su/
+#
 # Версия: 1.0
 # Дата: 30 июня 2025
 # Лицензия: MIT
-
-# Автор: AksTis
-# https://akstis.su/
-
-# Версия: 1.0
-# Дата: 30 Июня 2025
-# Лицензия: Общественное достояние
 
 readonly RED='\e[91m'
 readonly GREEN='\e[38;5;154m'
