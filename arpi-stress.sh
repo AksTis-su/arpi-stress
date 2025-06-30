@@ -53,33 +53,33 @@ print_status() {
     local timestamp=$1 cpu_temp=$2 cpu_clock_speed=$3 throttled_status=$4 t=$5 stage=$6
     echo "            AksTis Raspberry Pi stress test"
     echo -e "$GREEN_LINE_DASH"
-	case "$stage" in
-	"idle")
-		echo -e "${GREEN_BULLET} Стадия 1 ${GREEN_SEPARATOR}"
-		echo -e "${GREEN_BULLET} Бездействие в течении ${idle_duration} секунд"
-		echo -e "${GREEN_BULLET} Запуск стресс-теста через ${YELLOW}$t${NC}"
-		;;
-	"stress")
-		echo -e "${GREEN_BULLET} Стадия 2 ${GREEN_SEPARATOR}"
-		echo -e "${GREEN_BULLET} ${RED}Стресс-тест${NC} в течении ${stress_duration} секунд"
-		echo -e "${GREEN_BULLET} Остановка стресс-теста через ${RED}$t${NC}"
-		;;
-	"cooldown")
-		echo -e "${GREEN_BULLET} Стадия 3 ${GREEN_SEPARATOR}"
-		echo -e "${GREEN_BULLET} Охлаждение в течении ${cooldown_duration} секунд"
-		echo -e "${GREEN_BULLET} Завершение через ${YELLOW}$t${NC}"
-		;;
-	"end")
-		echo -e "${GREEN_BULLET}"
-		echo -e "${GREEN_BULLET} Стресс-тест завершён!"
-		echo -e "${GREEN_BULLET}"
-		;;
+    case "$stage" in
+    "idle")
+        echo -e "${GREEN_BULLET} Стадия 1 ${GREEN_SEPARATOR}"
+        echo -e "${GREEN_BULLET} Бездействие в течении ${idle_duration} секунд"
+        echo -e "${GREEN_BULLET} Запуск стресс-теста через ${YELLOW}$t${NC}"
+        ;;
+    "stress")
+        echo -e "${GREEN_BULLET} Стадия 2 ${GREEN_SEPARATOR}"
+        echo -e "${GREEN_BULLET} ${RED}Стресс-тест${NC} в течении ${stress_duration} секунд"
+        echo -e "${GREEN_BULLET} Остановка стресс-теста через ${RED}$t${NC}"
+        ;;
+    "cooldown")
+        echo -e "${GREEN_BULLET} Стадия 3 ${GREEN_SEPARATOR}"
+        echo -e "${GREEN_BULLET} Охлаждение в течении ${cooldown_duration} секунд"
+        echo -e "${GREEN_BULLET} Завершение через ${YELLOW}$t${NC}"
+        ;;
+    "end")
+        echo -e "${GREEN_BULLET}"
+        echo -e "${GREEN_BULLET} Стресс-тест завершён!"
+        echo -e "${GREEN_BULLET}"
+        ;;
     esac
     echo -e "$GREEN_LINE_DASH"
-	echo -e "${GREEN_BULLET} Timestamp              ${GREEN_SEPARATOR} $timestamp"
-	echo -e "${GREEN_BULLET} CPU Temperature (C)    ${GREEN_SEPARATOR} $cpu_temp"
-	echo -e "${GREEN_BULLET} CPU Clock Speed (MHz)  ${GREEN_SEPARATOR} $cpu_clock_speed"
-	echo -e "${GREEN_BULLET} CPU Throttled          ${GREEN_SEPARATOR} $throttled_status"
+    echo -e "${GREEN_BULLET} Timestamp              ${GREEN_SEPARATOR} $timestamp"
+    echo -e "${GREEN_BULLET} CPU Temperature (C)    ${GREEN_SEPARATOR} $cpu_temp"
+    echo -e "${GREEN_BULLET} CPU Clock Speed (MHz)  ${GREEN_SEPARATOR} $cpu_clock_speed"
+    echo -e "${GREEN_BULLET} CPU Throttled          ${GREEN_SEPARATOR} $throttled_status"
     echo -e "$GREEN_LINE_DASH"
 }
 
@@ -90,7 +90,7 @@ run_phase() {
         t=$((duration + 1 - i))
 
         tput cup 0 0
-		tput ed
+        tput ed
         print_status "$timestamp" "$cpu_temp" "$cpu_clock_speed" "$throttled_status" "$t" "$phase"
         echo "$timestamp,$cpu_temp,$cpu_clock_speed,$throttled_status" >> "$output_file"
         sleep 1
