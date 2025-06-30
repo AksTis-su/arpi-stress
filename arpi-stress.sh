@@ -99,9 +99,9 @@ run_phase() {
 
 # Инициализация
 clear
-idle_duration=60        #60
+idle_duration=60         #60
 stress_duration=300      #300
-cooldown_duration=60    #60
+cooldown_duration=60     #60
 time_file=$(date +"%Y-%m-%d_%H:%M:%S")
 output_file="$(dirname "$(realpath "${BASH_SOURCE[0]}")")/stress-${time_file}.csv"
 
