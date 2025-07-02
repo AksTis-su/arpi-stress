@@ -43,7 +43,7 @@ command -v stress &>/dev/null || error "stress не установлен. Уст
 
 collect_metrics() {
     timestamp=$(date +"%Y-%m-%d %H:%M:%S") || error "Не удалось получить временную метку."
-    cpu_temp=$(vcgencmd measure_temp | awk -F'[=°]' '{print $2}') || error "Не удалось получить температуру процессора."
+    cpu_temp=$(vcgencmd measure_temp | awk -F'[='\'']' '{print $2}') || error "Не удалось получить температуру процессора."
     cpu_clock_speed=$(vcgencmd measure_clock arm | awk -F= '{print $2 / 1000000}') || error "Не удалось получить частоту процессора."
     throttled_status=$(vcgencmd get_throttled | awk -F= '{print $2}') || error "Не удалось получить статус троттлинга."
 }
